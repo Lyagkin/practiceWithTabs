@@ -1,16 +1,18 @@
+"use strict";
+
 window.addEventListener("DOMContentLoaded", () => {
-  const tabs = document.querySelectorAll(".tabheader__item"), // список табов
+  const tabs = document.querySelectorAll(".tabheader__item"), // список табов (кликабельных элементов)
     tabsContent = document.querySelectorAll(".tabcontent"), // список контента
     tabsParent = document.querySelector(".tabheader__items"); // родитель табов для делегирования
 
   function hideTabContent() {
-    // функция которыя скрывает табы и класс активности у табов со страницы
+    // функция которыя скрывает табы, их класс активности и их контент со страницы
     tabsContent.forEach((item) => {
       item.classList.add("hideTabContent");
       item.classList.remove("showTabContent", "fade");
 
       tabs.forEach((item) => {
-        item.classList.remove("tabheader__item_active");
+        item.classList.remove("tabheader__item_active", "scale");
       });
     });
   }
@@ -20,7 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     tabsContent[i].classList.add("showTabContent", "fade");
     tabsContent[i].classList.remove("hideTabContent");
 
-    tabs[i].classList.add("tabheader__item_active");
+    tabs[i].classList.add("tabheader__item_active", "scale");
   }
 
   hideTabContent(); // скрываем все табы и классы активности у них
