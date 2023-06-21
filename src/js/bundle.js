@@ -11,11 +11,11 @@ function Tabs(
   tabsSelector,
   contentSelector,
   tabsParentSelector,
-  hideClass,
-  showClass,
-  activeClass,
-  fadeClass,
-  scaleClass
+  hideCssClass,
+  showCssClass,
+  activeCssClass,
+  fadeCssClass,
+  scaleCssClass
 ) {
   window.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(tabsSelector), // список табов
@@ -25,21 +25,21 @@ function Tabs(
     function hideTabContent() {
       // функция которыя скрывает табы, их класс активности и их контент со страницы
       tabsContent.forEach((item) => {
-        item.classList.add(hideClass);
-        item.classList.remove(showClass, fadeClass);
+        item.classList.add(hideCssClass);
+        item.classList.remove(showCssClass, fadeCssClass);
 
         tabs.forEach((item) => {
-          item.classList.remove(activeClass, scaleClass);
+          item.classList.remove(activeCssClass, scaleCssClass);
         });
       });
     }
 
     function showTabContent(i = 0) {
       // функция которая, принимает как аргумент индекс таба из списка и по нему показывает этот таб, по умолчанию принимает аргумент первого таба
-      tabsContent[i].classList.add(showClass, fadeClass);
-      tabsContent[i].classList.remove(hideClass);
+      tabsContent[i].classList.add(showCssClass, fadeCssClass);
+      tabsContent[i].classList.remove(hideCssClass);
 
-      tabs[i].classList.add(activeClass, scaleClass);
+      tabs[i].classList.add(activeCssClass, scaleCssClass);
     }
 
     hideTabContent(); // скрываем все табы и классы активности у них
