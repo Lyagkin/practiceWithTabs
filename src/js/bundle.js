@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 function tabs(
   tabsSelector,
-  contentSelector,
+  tabsContentSelector,
   tabsParentSelector,
   hideCssClass,
   showCssClass,
@@ -23,7 +23,7 @@ function tabs(
   scaleCssClass
 ) {
   const tabs = document.querySelectorAll(tabsSelector), // список табов
-    tabsContent = document.querySelectorAll(contentSelector), // список контента
+    tabsContent = document.querySelectorAll(tabsContentSelector), // список контента
     tabsParent = document.querySelector(tabsParentSelector); // родитель табов
 
   function hideTabContent() {
