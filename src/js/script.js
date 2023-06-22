@@ -1,16 +1,16 @@
 "use strict";
 
-const Tabs = require("./modules/tabs");
+import tabs from "./modules/tabs";
 
-Tabs(
-  ".tabheader__item",
-  ".tabcontent",
-  ".tabheader__items",
-  "hideTabContent",
-  "showTabContent",
-  "tabheader__item_active",
-  "fade",
-  "scale"
-);
-
-console.log(".tabheader__item".slice(1));
+window.addEventListener("DOMContentLoaded", () => {
+  tabs(
+    ".tabheader__item",
+    ".tabcontent",
+    ".tabheader__items",
+    "hideTabContent",
+    "showTabContent",
+    "tabheader__item_active",
+    "fade",
+    "scale"
+  );
+});
